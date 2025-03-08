@@ -1,7 +1,7 @@
 import 'package:floating_navbar/floating_navbar.dart';
 import 'package:floating_navbar/floating_navbar_item.dart';
 import 'package:flutter/material.dart';
-import 'package:sakshamapi/profilescreen.dart';
+
 import 'Course.dart';
 import 'CoursePackgae.dart';
 import 'HomeScreen.dart';

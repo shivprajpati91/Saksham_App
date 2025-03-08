@@ -40,8 +40,7 @@ class _McqPackagesScreenState extends State<McqPackagesScreen> {
           isLoading = false;
         });
       }
-    }
-  }
+    }}
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +102,6 @@ class _McqPackagesScreenState extends State<McqPackagesScreen> {
     );
   }
 }
-
 class PackageDetailsScreen extends StatelessWidget {
   final dynamic package;
 
