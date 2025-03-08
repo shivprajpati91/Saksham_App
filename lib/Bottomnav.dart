@@ -3,7 +3,8 @@ import 'package:floating_navbar/floating_navbar_item.dart';
 import 'package:flutter/material.dart';
 
 import 'Course.dart';
-import 'CoursePackgae.dart';
+import 'StudentTest.dart';
+import 'mcq.dart';
 import 'HomeScreen.dart';
 import 'CourseDetailScreen.dart';
 import 'InternshipForm.dart';
@@ -42,6 +43,11 @@ class bottomnavbar extends StatelessWidget {
             iconData: Icons.bookmark_remove_outlined,
             title: 'Package',
             page: McqPackagesScreen(),
+          ),
+          FloatingNavBarItem(
+            iconData: Icons.transfer_within_a_station,
+            title: 'Test',
+            page:TestimonialsScreen(),
           ),
         ],
         selectedIconColor: Colors.white,

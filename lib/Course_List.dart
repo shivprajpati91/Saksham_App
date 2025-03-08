@@ -17,7 +17,6 @@ class _CourseListScreenState extends State<CourseListScreen> {
     super.initState();
     fetchCourses();
   }
-
   fetchCourses() async {
     final response = await http.get(Uri.parse('https://www.sakshamdigitaltechnology.com/api/tutorials'));
     if (response.statusCode == 200) {
@@ -26,7 +25,6 @@ class _CourseListScreenState extends State<CourseListScreen> {
       });
     }
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

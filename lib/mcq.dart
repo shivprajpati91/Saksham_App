@@ -93,20 +93,15 @@ class _McqPackagesScreenState extends State<McqPackagesScreen> {
                 return ListTile(
                   title: Text(courses[index]['course_name']),
                   subtitle: Text('Page Name: ${courses[index]['page_name']}'),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+                );},
+            ),],
+        ),),
+    );}
 }
 class PackageDetailsScreen extends StatelessWidget {
   final dynamic package;
 
   const PackageDetailsScreen({Key? key, required this.package}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,9 +117,7 @@ class PackageDetailsScreen extends StatelessWidget {
             SizedBox(height: 10),
             Text('Description: ${package['description']}', style: TextStyle(fontSize: 16)),
           ],
-        ),
-      ),
-    );
-  }
+        ),),
+    );}
 }
 
