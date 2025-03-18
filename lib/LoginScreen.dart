@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'Bottomnav.dart';
 import 'RegisterScreen.dart';
+import 'UserProfile.dart';
 class Loginpage extends StatefulWidget {
   const Loginpage({super.key});
 
@@ -43,7 +44,6 @@ class _LoginpageState extends State<Loginpage> {
               "password": password.text
             })
         );
-
         if (response.statusCode == 200 || response.statusCode == 201) {
           print(response.body);
           ScaffoldMessenger.of(context).showSnackBar(
@@ -139,7 +139,7 @@ class _LoginpageState extends State<Loginpage> {
                           ),
                         ),
                         TextButton(onPressed: (){
-                          // Navigator.push(context, MaterialPageRoute(builder: (context)=>PassReset()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>UserProfileScreen()));
                         },
                             child: Text("Forgot password?",
                                 style: TextStyle(color: Colors.blue))),
