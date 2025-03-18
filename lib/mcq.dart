@@ -45,9 +45,6 @@ class _McqPackagesScreenState extends State<McqPackagesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('MCQ Packages'),
-      ),
       body: isLoading
           ? Center(child: CircularProgressIndicator())
           : SingleChildScrollView(

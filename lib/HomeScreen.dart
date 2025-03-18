@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import 'CourseDetailScreen.dart';
+import 'StudentTest.dart';
 import 'TutorialScreen.dart';
 import 'data.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
@@ -59,17 +60,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.pinkAccent.shade200,
-        elevation: 5,
-        title: Text(
-          'SAKSHAM',
-          style: TextStyle(fontWeight: FontWeight.w500, color: Colors.white),
-        ),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.help_outline, color: Colors.white))],
-      ),
-      drawer: Drawer(),
-      drawerScrimColor: Colors.red,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -244,8 +234,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: TutorialListScreen(),
                       ),
                     ),
+                    Container(
+                      height: 170,
+                      color: Colors.white,
+                      child: TestimonialsScreen(),
+                    ),
 
-                    SizedBox(height: 20),
+                    SizedBox(height: 50),
                   ],
                 )
 

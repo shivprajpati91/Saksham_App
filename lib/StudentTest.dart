@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-
-
 class TestimonialsScreen extends StatefulWidget {
   @override
   _TestimonialsScreenState createState() => _TestimonialsScreenState();
@@ -30,37 +28,62 @@ class _TestimonialsScreenState extends State<TestimonialsScreen> {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Student Testimonials')),
-      body: testimonials.isEmpty
-          ? Center(child: CircularProgressIndicator())
-          : ListView.builder(
-        itemCount: testimonials.length,
-        itemBuilder: (context, index) {
-          final testimonial = testimonials[index];
-          return Card(
-            margin: EdgeInsets.all(10),
-            child: ListTile(
-              leading: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://sakshamdigitaltechnology.com/uploads/${testimonial['image']}'),
-              ),
-              title: Text(testimonial['name'],
-                  style: TextStyle(fontWeight: FontWeight.bold)),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+
+    Widget build(BuildContext context) {
+      return Container(
+        height: 250,
+        color: Colors.white,// Enforce a fixed height for the widget
+        child: testimonials.isEmpty
+            ? Center(child: CircularProgressIndicator())
+            : PageView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: testimonials.length,
+          itemBuilder: (context, index) {
+            final testimonial = testimonials[index];
+            return
+               Row(crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(testimonial['designation']),
-                  SizedBox(height: 5),
-                  Text(testimonial['feedback']),
-                ],
-              ),
-            ),
-          );
-        },
-      ),
-    );
+                  CircleAvatar(
+                    radius: 30,
+                    backgroundImage: NetworkImage(
+                      'https://sakshamdigitaltechnology.com/uploads/${testimonial['image']}',
+                    ),
+                    onBackgroundImageError: (_, __) {
+                      setState(() {}); // Force a rebuild when an error occurs
+                    },
+                    child: Icon(Icons.person, size: 30, color: Colors.white), // Placeholder icon
+                  ),
+
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          testimonial['name'],
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 16),
+                        ),
+                        Text(
+                          testimonial['designation'],
+                          style: TextStyle(color: Colors.grey[600]),
+                        ),
+                        SizedBox(height: 5),
+                        Text(
+                          testimonial['feedback'],
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontSize: 14, color: Colors.black),
+                        ),
+                      ],
+                    ),
+                  )] );
+
+
+          },
+        ),
+      );
+    }
+
   }
-}

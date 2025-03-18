@@ -93,7 +93,6 @@ class _InternshipFormScreenState extends State<InternshipFormScreen> with Single
         SnackBar(content: Text("🚨 Error: $e")),
       );
     }
-
     setState(() {
       isLoading = false;
     });
@@ -103,10 +102,6 @@ class _InternshipFormScreenState extends State<InternshipFormScreen> with Single
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.pink.shade50, // Soft pink background
-      appBar: AppBar(
-        title: Text("Internship Application"),
-        backgroundColor: Colors.pinkAccent,
-      ),
       body: FadeTransition(
         opacity: _fadeAnimation,
         child: SingleChildScrollView(
@@ -135,7 +130,7 @@ class _InternshipFormScreenState extends State<InternshipFormScreen> with Single
 
                       SizedBox(height: 15),
 
-                      // 🔹 Resume Upload
+
                       Row(
                         children: [
                           Expanded(

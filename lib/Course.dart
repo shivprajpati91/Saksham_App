@@ -60,10 +60,7 @@ class _CourseState extends State<Course> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Course Details'),
-        backgroundColor: Colors.pinkAccent.shade200,
-      ),
+
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
           : _hasError || _courseDetails == null
