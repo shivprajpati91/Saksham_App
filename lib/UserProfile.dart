@@ -12,7 +12,7 @@ class UserProfileScreen extends StatefulWidget {
 class _UserProfileScreenState extends State<UserProfileScreen> {
   final _formKey = GlobalKey<FormState>();
 
-  // Controllers for user inputs
+
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _dobController = TextEditingController();
   final TextEditingController _addressController = TextEditingController();
@@ -21,7 +21,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   final TextEditingController _pincodeController = TextEditingController();
 
   File? _imageFile;
-  final ImagePicker _picker = ImagePicker(); // ✅ Use ImagePicker instance
+  final ImagePicker _picker = ImagePicker();
 
 
   Future<void> _pickImage() async {
@@ -84,7 +84,6 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-
                 GestureDetector(
                   onTap: _pickImage,
                   child: CircleAvatar(
