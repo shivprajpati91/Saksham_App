@@ -20,8 +20,9 @@ dependencies:
   flutter_html: ^3.0.0-beta.2
   cached_network_image: ^3.3.0
   shimmer: ^3.0.0
+  lottie: ^3.0.0
   shared_preferences: ^2.5.2
-
+  animated_text_kit: ^4.2.2
   image_picker: ^1.0.4
 
 
@@ -50,7 +51,16 @@ flutter:
   uses-material-design: true
 
 
-  # assets:
+  assets:
+    - anim/splsh.json
+    - anim/splh1.json
+    - anim/line.json
+    - anim/5.json
+    - anim/line2.json
+    - anim/beach.json
+    - anim/line9.json
+    - anim/sl3.json
+    - anim/text.json
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

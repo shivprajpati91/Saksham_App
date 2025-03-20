@@ -11,7 +11,6 @@ class Registration extends StatefulWidget {
   @override
   State<Registration> createState() => _RegistrationState();
 }
-
 class _RegistrationState extends State<Registration> {
   final TextEditingController name = TextEditingController();
   final TextEditingController email = TextEditingController();
@@ -24,8 +23,6 @@ class _RegistrationState extends State<Registration> {
   bool hide_confirm_pass=true;
 
   final _formkey = GlobalKey<FormState>();
-
-
 
   Future<void> _register() async {
     if (_formkey.currentState!.validate()) {
